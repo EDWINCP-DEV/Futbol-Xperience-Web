@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutbolXperience | Elite Sports Technology</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="loader" class="loader-wrapper">
+        <div class="fx-spinner"></div>
+        <p>Validando Identidad...</p>
+    </div>
+
+    <div id="particles-js"></div>
+
+    <header class="main-header">
+        <div class="nav-container">
+            <img src="img/logo.png" alt="FX Logo" class="nav-logo">
+            <nav class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#historias">Historias</a>
+                <a href="#contacto">Contacto</a>
+                <a href="login.html" class="btn-login-header">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="inicio" class="sandbox-hero">
+            <div class="hero-overlay">
+                <h1 class="brand-title">Futbol<span class="text-orange">X</span><span class="text-blue">perience</span></h1>
+                <p class="tagline">Tecnología de Élite para el Fútbol Amateur</p>
+                <div class="scroll-hint"><i class="fas fa-chevron-down"></i></div>
+            </div>
+        </section>
+
+        <div class="solid-wrapper">
+            <div class="mv-grid">
+                <div class="glass-card neon-green">
+                    <div class="icon-box green-bg"><i class="fas fa-rocket"></i></div>
+                    <h3>Misión</h3>
+                    <p>Digitalizar y optimizar la administración deportiva mediante soluciones integrales.</p>
+                </div>
+                <div class="glass-card neon-orange">
+                    <div class="icon-box orange-bg"><i class="fas fa-eye"></i></div>
+                    <h3>Visión</h3>
+                    <p>Liderar la innovación tecnológica, creando ecosistemas digitales sustentables.</p>
+                </div>
+            </div>
+
+            <section id="nuestra-historia" class="content-section">
+                <h2 class="section-title">Nuestra Senda</h2>
+                <div class="history-grid">
+                    <div class="history-card neon-orange">
+                        <div class="history-year">Origen</div>
+                        <h3>Pasión Amateur</h3>
+                        <p>Nacimos en el barro de las canchas locales, identificando la necesidad de profesionalizar el deporte que amamos.</p>
+                    </div>
+
+                    <div class="history-card neon-blue">
+                        <div class="history-year">Evolución</div>
+                        <h3>ADN Tecnológico</h3>
+                        <p>Fusionamos Business Intelligence con la adrenalina del fútbol para crear una gestión en tiempo real sin precedentes.</p>
+                    </div>
+
+                    <div class="history-card neon-green">
+                        <div class="history-year">Hoy</div>
+                        <h3>Elite Sports Tech</h3>
+                        <p>Hoy somos el aliado estratégico de las ligas que buscan dar el salto al siguiente nivel digital.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contacto" class="content-section">
+                <div class="glass-card neon-blue">
+                    <h3><i class="fas fa-paper-plane"></i> Contacto y Soporte</h3>
+                    <form id="contactForm" class="contact-form">
+                        <input type="text" placeholder="Nombre de tu Organización" required>
+                        <input type="email" placeholder="Correo de contacto" required>
+                        <textarea placeholder="¿En qué podemos ayudarte?" rows="4" required></textarea>
+                        <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <p id="success-msg" style="display:none; color: var(--fx-green); margin-top:10px; font-weight:bold;">
+            <i class="fas fa-check-circle"></i> ¡Tu solicitud ha sido recibida!
+        </p>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <img src="img/logo.png" alt="FutbolXperience" class="footer-logo">
+            <p class="footer-tagline">"Transformando el fútbol amateur con inteligencia deportiva de clase mundial."</p>
+
+            <div class="footer-credits">
+                &copy; 2026 FutbolXperience | Business Intelligence & Sports Technology
+                <br>
+                <small>Diseñado para la Élite Deportiva</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>

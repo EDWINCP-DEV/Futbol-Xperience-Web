@@ -1,0 +1,154 @@
+/* admin.css */
+
+.admin-theme {
+    background: var(--fx-dark);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-text {
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+}
+
+.admin-welcome {
+    color: #888;
+    font-size: 0.85rem;
+    margin-right: 15px;
+}
+
+
+/* MONITOR DE SALUD */
+
+.status-pill {
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.status-pill.active {
+    background: rgba(39, 174, 96, 0.2);
+    color: var(--fx-green);
+    border: 1px solid var(--fx-green);
+}
+
+.status-pill.expired {
+    background: rgba(255, 77, 77, 0.2);
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d;
+}
+
+
+/* TABLA FX */
+
+.fx-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.fx-table th {
+    text-align: left;
+    padding: 15px;
+    color: var(--fx-blue);
+    border-bottom: 2px solid rgba(0, 210, 255, 0.2);
+    font-size: 0.8rem;
+}
+
+.fx-table td {
+    padding: 15px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+}
+
+.msg-text {
+    color: #888;
+    font-style: italic;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.btn-action {
+    background: transparent;
+    border: 1px solid var(--fx-blue);
+    color: var(--fx-blue);
+    padding: 5px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.75rem;
+}
+
+.btn-action:hover {
+    background: var(--fx-blue);
+    color: #000;
+}
+
+.admin-theme {
+    background: var(--fx-dark);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.admin-welcome {
+    color: #888;
+    font-size: 0.85rem;
+    margin-right: 15px;
+}
+
+
+/* Estilos de Salud y Planes */
+
+.status-pill {
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.status-pill.active {
+    background: rgba(39, 174, 96, 0.2);
+    color: var(--fx-green);
+    border: 1px solid var(--fx-green);
+}
+
+.status-pill.expired {
+    background: rgba(255, 77, 77, 0.2);
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d;
+}
+
+
+/* Footer */
+
+.main-footer {
+    padding: 40px 20px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    margin-top: 50px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.footer-logo {
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.footer-credits {
+    font-size: 0.75rem;
+    color: #444;
+}

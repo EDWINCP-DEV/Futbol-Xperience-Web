@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Console FX | Supervisión Global</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body class="admin-theme">
+    <div id="particles-js"></div>
+
+    <header class="main-header">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="img/logo.png" alt="FX Logo" class="nav-logo">
+                <span class="brand-text">MASTER <span class="text-orange">FX</span></span>
+            </div>
+            <div class="nav-links">
+                <span class="admin-welcome">
+                    <i class="fas fa-user-shield"></i> Administrador: <b id="admin-name-display">Cargando...</b>
+                </span>
+                <button onclick="enviarAnuncioGlobal()" class="btn-login-header" style="border-color: var(--fx-green); color: var(--fx-green);">
+                    <i class="fas fa-bullhorn"></i> Comunicado Global
+                </button>
+                <button id="btnLogout" class="btn-login-header">Cerrar Sesión</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="solid-wrapper" style="margin-top: 110px;">
+        <div class="history-grid">
+            <div class="history-card neon-blue">
+                <div class="history-year">Actividad Global</div>
+                <h3 id="active-matches-count">0</h3>
+                <p>Partidos programados hoy en el sistema.</p>
+            </div>
+            <div class="history-card neon-orange">
+                <div class="history-year">Ligas Totales</div>
+                <h3 id="count-ligas">0</h3>
+                <p>Ecosistemas deportivos activos.</p>
+            </div>
+            <div class="history-card neon-green">
+                <div class="history-year">Recaudación</div>
+                <h3 id="active-revenue">$0.00</h3>
+                <p>Ingresos proyectados por licencias.</p>
+            </div>
+        </div>
+
+        <section class="content-section">
+            <h2 class="section-title">Estatus Global de Ligas</h2>
+            <div class="glass-card table-wrapper">
+                <table class="fx-table">
+                    <thead>
+                        <tr>
+                            <th>Dueño / Liga</th>
+                            <th>Email</th>
+                            <th>Plan de Datos (Equipos)</th>
+                            <th>Salud (Actividad)</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ligas-tbody">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Consultas de Soporte</h2>
+            <div class="glass-card table-wrapper">
+                <table class="fx-table">
+                    <thead>
+                        <tr>
+                            <th>Organización</th>
+                            <th>Email</th>
+                            <th>Mensaje</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contact-tbody">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <img src="img/logo.png" alt="FX" class="footer-logo">
+            <p class="footer-tagline">Supervisión Root de Ecosistemas Deportivos</p>
+            <p class="footer-credits">&copy; 2026 FutbolXperience System | Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script type="module" src="js/admin-logic.js"></script>
+</body>
+
+</html>

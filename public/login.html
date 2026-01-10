@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Privado | FutbolXperience</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="auth-page-body">
+    <div id="particles-js"></div>
+
+    <a href="index.html" class="back-home-floating">
+        <i class="fas fa-arrow-left"></i> Volver al Inicio
+    </a>
+
+    <div class="auth-wrapper">
+        <div class="login-box-standalone">
+            <img src="img/logo.png" alt="FX Logo" class="auth-logo">
+
+            <div class="auth-header">
+                <h2>Consola General</h2>
+                <p>Ingrese sus credenciales corporativas para continuar</p>
+            </div>
+
+            <form id="loginForm" class="auth-form">
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Correo Corporativo" required>
+                </div>
+
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="pass" placeholder="Contraseña" required>
+                </div>
+
+                <button type="submit" id="btnLogin" class="btn-gradient-tech">Validar Identidad</button>
+            </form>
+
+            <p class="auth-footer">&copy; 2026 FutbolXperience System</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script type="module" src="js/login-logic.js"></script>
+</body>
+
+</html>
