@@ -22,30 +22,21 @@ document.getElementById('btnLogin').onclick = async(e) => {
     const email = document.getElementById('email').value;
     const pass = document.getElementById('pass').value;
 
-    if (!email || !pass) return alert("Por favor complete los campos.");
-
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, pass);
         const user = userCredential.user;
 
+        // Validamos el rol antes de dejarlo pasar
         const userDoc = await getDoc(doc(db, "users", user.uid));
-        if (userDoc.exists()) {
-            const userData = userDoc.data();
-
-            if (userData.role === "admin_general") {
-                // MENSAJE DE BIENVENIDA
-                alert(`¡Bienvenido de nuevo, ${userData.fullName}! Accediendo al Panel Maestro...`);
-
-                // Pequeña pausa para que se vea el mensaje antes de cambiar de página
-                setTimeout(() => {
-                    window.location.href = "admin.html";
-                }, 500);
-            } else {
-                alert("Acceso denegado: Se requieren permisos de Administrador General.");
-            }
+        if (userDoc.exists() && userDoc.data().role === "admin_general") {
+            alert(`¡Bienvenido, ${userDoc.data().fullName}!`);
+            window.location.replace("admin.html");
+        } else {
+            alert("Acceso Restringido: No tienes permisos de Administrador General.");
+            await auth.signOut();
         }
     } catch (error) {
-        alert("Error de autenticación: Verifique sus credenciales.");
+        alert("Credenciales inválidas o error de conexión.");
         console.error(error);
     }
 };

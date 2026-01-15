@@ -1,104 +1,147 @@
 <!DOCTYPE html>
-<html lang="es">
+< lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Console FX | Supervisión Global</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/admin.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Master Console FX | Supervisión Global</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/admin.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="icon" type="image/png" href="img/logo.png">
+    </head>
 
-<body class="admin-theme">
-    <div id="particles-js"></div>
+    <body class="admin-theme">
+        <div id="particles-js"></div>
 
-    <header class="main-header">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <img src="img/logo.png" alt="FX Logo" class="nav-logo">
-                <span class="brand-text">MASTER <span class="text-orange">FX</span></span>
-            </div>
-            <div class="nav-links">
-                <span class="admin-welcome">
+        <header class="main-header">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <img src="img/logo.png" alt="FX Logo" class="nav-logo">
+                    <span class="brand-text">MASTER <span class="text-orange">FX</span></span>
+                </div>
+                <div class="nav-links">
+                    <span class="admin-welcome">
                     <i class="fas fa-user-shield"></i> Administrador: <b id="admin-name-display">Cargando...</b>
                 </span>
-                <button onclick="enviarAnuncioGlobal()" class="btn-login-header" style="border-color: var(--fx-green); color: var(--fx-green);">
+                    <button onclick="window.enviarAnuncioGlobal()" class="btn-login-header" style="border-color: var(--fx-green); color: var(--fx-green);">
                     <i class="fas fa-bullhorn"></i> Comunicado Global
                 </button>
-                <button id="btnLogout" class="btn-login-header">Cerrar Sesión</button>
+                    <button id="btnLogout" class="btn-login-header">Cerrar Sesión</button>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <main class="solid-wrapper" style="margin-top: 110px;">
-        <div class="history-grid">
-            <div class="history-card neon-blue">
-                <div class="history-year">Actividad Global</div>
-                <h3 id="active-matches-count">0</h3>
-                <p>Partidos programados hoy en el sistema.</p>
+        <main class="solid-wrapper" style="margin-top: 110px;">
+            <div class="history-grid">
+                <div class="history-card neon-blue">
+                    <div class="history-year">Actividad Global</div>
+                    <h3 id="active-matches-count">0</h3>
+                    <p>Partidos programados hoy.</p>
+                </div>
+                <div class="history-card neon-orange">
+                    <div class="history-year">Ligas Totales</div>
+                    <h3 id="count-ligas">0</h3>
+                    <p>Ecosistemas activos.</p>
+                </div>
+                <div class="history-card neon-green">
+                    <div class="history-year">Recaudación</div>
+                    <h3 id="active-revenue">$0.00</h3>
+                    <p>Ingresos proyectados.</p>
+                </div>
             </div>
-            <div class="history-card neon-orange">
-                <div class="history-year">Ligas Totales</div>
-                <h3 id="count-ligas">0</h3>
-                <p>Ecosistemas deportivos activos.</p>
+
+            <section class="content-section">
+                <h2 class="section-title">Estatus Global de Ligas</h2>
+                <div class="glass-card table-wrapper">
+                    <table class="fx-table">
+                        <thead>
+                            <tr>
+                                <th>Dueño / Liga</th>
+                                <th>Email</th>
+                                <th>Plan de Datos</th>
+                                <th>Salud</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ligas-tbody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="content-section" style="margin-top: 40px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2 class="section-title" style="margin: 0;">Equipo de Administración</h2>
+                    <button onclick="window.abrirModalAdmin()" class="btn-login-header" style="border-color: var(--fx-blue); color: var(--fx-blue); padding: 5px 15px;">
+                    <i class="fas fa-user-plus"></i> Agregar Admin
+                </button>
+                </div>
+                <div class="glass-card table-wrapper">
+                    <table class="fx-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Email Corporativo</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admins-tbody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="content-section" style="margin-top: 40px;">
+                <h2 class="section-title">Consultas de Soporte</h2>
+                <div class="glass-card table-wrapper">
+                    <table class="fx-table">
+                        <thead>
+                            <tr>
+                                <th>Organización</th>
+                                <th>Email</th>
+                                <th>Mensaje</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contact-tbody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <div class="history-grid" style="grid-template-columns: 2fr 1fr; gap: 20px; margin-top: 30px;">
+                <div class="glass-card" style="padding: 20px;">
+                    <h2 class="section-title">Crecimiento de Equipos</h2>
+                    <canvas id="growthChart" style="max-height: 300px;"></canvas>
+                </div>
+                <div class="glass-card" style="padding: 20px;">
+                    <h2 class="section-title">Historial de Actividad</h2>
+                    <ul id="activity-log" style="list-style: none; font-size: 0.8rem; color: #888; line-height: 2;"></ul>
+                </div>
             </div>
-            <div class="history-card neon-green">
-                <div class="history-year">Recaudación</div>
-                <h3 id="active-revenue">$0.00</h3>
-                <p>Ingresos proyectados por licencias.</p>
+
+            <div id="adminModal" class="glass-card" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); z-index:1000; padding:30px; border:1px solid var(--fx-blue); width:400px; background: #0a0b10;">
+                <h2 class="section-title">Nuevo Admin General</h2>
+                <form id="form-nuevo-admin">
+                    <input type="text" id="new-admin-name" placeholder="Nombre Completo" required style="width:100%; margin-bottom:15px; padding:10px; background:rgba(0,0,0,0.5); border:1px solid var(--border); color:white;">
+                    <input type="email" id="new-admin-email" placeholder="Email" required style="width:100%; margin-bottom:15px; padding:10px; background:rgba(0,0,0,0.5); border:1px solid var(--border); color:white;">
+                    <input type="password" id="new-admin-pass" placeholder="Contraseña" required style="width:100%; margin-bottom:15px; padding:10px; background:rgba(0,0,0,0.5); border:1px solid var(--border); color:white;">
+                    <div style="display:flex; gap:10px;">
+                        <button type="submit" class="btn-gradient" style="flex:1;">Crear</button>
+                        <button type="button" onclick="window.cerrarModalAdmin()" class="btn-action" style="flex:1; border-color:#ff4d4d; color:#ff4d4d;">Cancelar</button>
+                    </div>
+                </form>
             </div>
-        </div>
+        </main>
 
-        <section class="content-section">
-            <h2 class="section-title">Estatus Global de Ligas</h2>
-            <div class="glass-card table-wrapper">
-                <table class="fx-table">
-                    <thead>
-                        <tr>
-                            <th>Dueño / Liga</th>
-                            <th>Email</th>
-                            <th>Plan de Datos (Equipos)</th>
-                            <th>Salud (Actividad)</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="ligas-tbody">
-                    </tbody>
-                </table>
+        <footer class="main-footer">
+            <div class="footer-content">
+                <img src="img/logo.png" alt="FX" class="footer-logo">
+                <p class="footer-tagline">Supervisión Root de Ecosistemas Deportivos</p>
+                <p class="footer-credits">&copy; 2026 FutbolXperience System | Todos los derechos reservados.</p>
             </div>
-        </section>
+        </footer>
 
-        <section class="content-section">
-            <h2 class="section-title">Consultas de Soporte</h2>
-            <div class="glass-card table-wrapper">
-                <table class="fx-table">
-                    <thead>
-                        <tr>
-                            <th>Organización</th>
-                            <th>Email</th>
-                            <th>Mensaje</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="contact-tbody">
-                    </tbody>
-                </table>
-            </div>
-        </section>
-    </main>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+        <script type="module" src="js/admin-logic.js"></script>
+    </body>
 
-    <footer class="main-footer">
-        <div class="footer-content">
-            <img src="img/logo.png" alt="FX" class="footer-logo">
-            <p class="footer-tagline">Supervisión Root de Ecosistemas Deportivos</p>
-            <p class="footer-credits">&copy; 2026 FutbolXperience System | Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script type="module" src="js/admin-logic.js"></script>
-</body>
-
-
-</html>
+    </html>
