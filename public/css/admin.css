@@ -152,3 +152,27 @@
     font-size: 0.75rem;
     color: #444;
 }
+
+
+/* RESPONSIVE PARA EL DASHBOARD */
+
+@media (max-width: 768px) {
+    .history-grid {
+        grid-template-columns: 1fr !important;
+        /* Tarjetas en una sola columna */
+    }
+    /* Hace que las tablas permitan scroll lateral para que no se corten */
+    .table-wrapper {
+        overflow-x: auto;
+        display: block;
+        width: 100%;
+    }
+    .fx-table {
+        min-width: 600px;
+        /* Fuerza un ancho mínimo para mantener legibilidad */
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

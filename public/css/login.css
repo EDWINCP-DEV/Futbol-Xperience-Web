@@ -176,3 +176,11 @@
     margin-top: 25px;
     letter-spacing: 1px;
 }
+
+@media (max-width: 480px) {
+    .login-modal {
+        width: 90%;
+        padding: 20px;
+        margin: 0 auto;
+    }
+}
