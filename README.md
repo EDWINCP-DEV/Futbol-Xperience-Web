@@ -17,8 +17,6 @@ Puedes explorar la aplicación web desplegada en producción directamente en:
 
 ## 🖼️ Vista Previa
 
-> *[Inserta aquí un GIF animado o capturas de pantalla de la plataforma web]*
-
 | Pantalla Principal | Gestión / Estadísticas |
 | :---: | :---: |
 | `![Vista Principal] ` <img width="1470" height="956" alt="Captura de pantalla 2026-07-27 a la(s) 9 28 08 a m" src="https://github.com/user-attachments/assets/4a9b7580-f762-4704-94b6-fe000da5d622" /> | `![Detalles] ` <img width="1470" height="956" alt="Captura de pantalla 2026-07-27 a la(s) 9 28 56 a m" src="https://github.com/user-attachments/assets/569b310b-4908-48e3-a0d4-4ca6fc857caa" /> |
